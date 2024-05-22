@@ -19,18 +19,8 @@ let vyRaquetiop
 let MPontos = 0
 let OpPontos = 0
 
-let sRaquetada
-let sPonto
-let sTrilha
-
-function preload(){
-  sTrilha=loadSound("trilha.mp3")
-  sRaquetada=loadSound("raquetada.mp3")
-  sPonto=loadSound("ponto.mp3")
-}
 function setup() {
   createCanvas(650,500)
-  sTrilha.loop()
 }
 
 function draw() {
@@ -92,7 +82,6 @@ function clRaqueti(x,y){
   colisao=collideRectCircle(x,y,cRaqueti,aRaqueti,xBolona,yBolona,r)
  if (colisao) {
    vxBolona*=-1
-   sRaquetada.play() 
  } }
 function mvRaquetiop(){
   if (keyIsDown(87)){
@@ -116,9 +105,8 @@ function placar(){
   
  if(xBolona-r>620){
    MPontos+=1
-   sPonto.play()
  }
   if(xBolona-r<5){
     OpPontos+=1
-  sPonto.play()}
+  }
 }
